@@ -27,14 +27,22 @@ export default function Home() {
             </button>
           </Link>
         </div>
-        <div className="flex justify-center rounded-full">
-          <Image
-            src="/../public/roko.png"
-            alt="Roko"
-            className="rounded-2xl"
-            width={750}
-            height={750}
-          />
+        <div className="flex justify-center overflow-y-scroll h-full scrollbar-hide">
+          <div className="grid grid-cols-3 gap-4">
+            {Array.from({ length: 20 }, (_, i) => (
+              <div
+                key={i}
+                className="relative rounded-2xl overflow-hidden w-96 h-96"
+              >
+                <Image
+                  src={`https://picsum.photos/500/500?random=${i}`}
+                  alt={`Image ${i}`}
+                  layout="fill"
+                  objectFit="cover"
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </main>
     </>
