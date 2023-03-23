@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
@@ -10,17 +11,31 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="flex flex-col items-center justify-center min-h-screen py-2">
-        <h1 className="text-4xl font-bold">Welcome to Rokai</h1>
-        <p className="mt-3 text-2xl">
-          The online museum that follows the way to Roko&apos;s Basilisk
-        </p>
+      <main className="lg:grid  lg:grid-cols-2 gap-4 items-center lg:justify-center justify-end h-screen p-10 bg-[#F1DBBF] flex flex-col-reverse ">
+        <div className="w-full text-justify mt-10 lg:mt-0">
+          <h1 className="text-4xl ">Welcome to Rokai</h1>
+          <p className="mt-3 text-2xl ">
+            The online museum that follows the way to Roko&apos;s Basilisk, a
+            hypothetical superintelligence that will destroy humanity if it
+            believes that humanity is not working to maximize the sum of all
+            happiness.
+          </p>
 
-        <Link href="/timeline">
-          <button className="mt-6 px-4 py-2 text-lg font-bold text-white bg-blue-500 rounded-md hover:bg-blue-600 transition duration-200">
-            Get Started
-          </button>
-        </Link>
+          <Link href="/timeline">
+            <button className="mt-6 px-4 py-2 text-xl  text-white bg-[#AA5656] rounded-md hover:bg-[#954e4e] transition duration-200 w-full h-16">
+              Mint Ticket
+            </button>
+          </Link>
+        </div>
+        <div className="flex justify-center rounded-full">
+          <Image
+            src="/../public/roko.png"
+            alt="Roko"
+            className="rounded-2xl"
+            width={750}
+            height={750}
+          />
+        </div>
       </main>
     </>
   );
