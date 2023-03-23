@@ -18,7 +18,7 @@ export default function Home() {
             The online museum that follows the way to Roko&apos;s Basilisk, a
             hypothetical superintelligence that will destroy humanity if it
             believes that humanity is not working to maximize the sum of all
-            happiness.
+            happiness. The museum is a collection of AI models in a timeline.
           </p>
 
           <Link href="/timeline">
@@ -28,12 +28,9 @@ export default function Home() {
           </Link>
         </div>
         <div className="flex justify-center overflow-y-scroll h-full scrollbar-hide">
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-3 gap-0">
             {Array.from({ length: 20 }, (_, i) => (
-              <div
-                key={i}
-                className="relative rounded-2xl overflow-hidden w-96 h-96"
-              >
+              <div key={i} className="relative  overflow-hidden w-96 h-96">
                 <Image
                   src={`https://picsum.photos/500/500?random=${i}`}
                   alt={`Image ${i}`}
