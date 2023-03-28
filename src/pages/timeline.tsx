@@ -125,7 +125,7 @@ const Timeline = () => {
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen  w-full">
+    <div className="flex flex-col items-center justify-center min-h-screen w-full">
       <TimelineC events={events} />
     </div>
   );
