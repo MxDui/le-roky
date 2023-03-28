@@ -1,15 +1,132 @@
-import Carousel from "@/components/Carrousel";
+import TimelineC from "@/components/Timeline";
 import React from "react";
 const Timeline = () => {
-  const images = ["image1.jpg", "image2.jpg", "image3.jpg"];
+  const events = [
+    {
+      date: "2023-01-01",
+      title: "Event 1",
+      description: "This is the description for Event 1.",
+    },
+    {
+      date: "2023-02-01",
+      title: "Event 2",
+      description: "This is the description for Event 2.",
+    },
+    {
+      date: "2023-03-01",
+      title: "Event 3",
+      description: "This is the description for Event 3.",
+    },
+    {
+      date: "2023-03-01",
+      title: "Event 3",
+      description: "This is the description for Event 3.",
+    },
+    {
+      date: "2023-03-01",
+      title: "Event 3",
+      description: "This is the description for Event 3.",
+    },
+    {
+      date: "2023-03-01",
+      title: "Event 3",
+      description: "This is the description for Event 3.",
+    },
+    {
+      date: "2023-03-01",
+      title: "Event 3",
+      description: "This is the description for Event 3.",
+    },
+    {
+      date: "2023-03-01",
+      title: "Event 3",
+      description: "This is the description for Event 3.",
+    },
+    {
+      date: "2023-03-01",
+      title: "Event 3",
+      description: "This is the description for Event 3.",
+    },
+    {
+      date: "2023-03-01",
+      title: "Event 3",
+      description: "This is the description for Event 3.",
+    },
+    {
+      date: "2023-03-01",
+      title: "Event 3",
+      description: "This is the description for Event 3.",
+    },
+    {
+      date: "2023-03-01",
+      title: "Event 3",
+      description: "This is the description for Event 3.",
+    },
+    {
+      date: "2023-03-01",
+      title: "Event 3",
+      description: "This is the description for Event 3.",
+    },
+    {
+      date: "2023-03-01",
+      title: "Event 3",
+      description: "This is the description for Event 3.",
+    },
+    {
+      date: "2023-03-01",
+      title: "Event 3",
+      description: "This is the description for Event 3.",
+    },
+    {
+      date: "2023-03-01",
+      title: "Event 3",
+      description: "This is the description for Event 3.",
+    },
+    {
+      date: "2023-03-01",
+      title: "Event 3",
+      description: "This is the description for Event 3.",
+    },
+    {
+      date: "2023-03-01",
+      title: "Event 3",
+      description: "This is the description for Event 3.",
+    },
+    {
+      date: "2023-03-01",
+      title: "Event 3",
+      description: "This is the description for Event 3.",
+    },
+    {
+      date: "2023-03-01",
+      title: "Event 3",
+      description: "This is the description for Event 3.",
+    },
+    {
+      date: "2023-03-01",
+      title: "Event 3",
+      description: "This is the description for Event 3.",
+    },
+    {
+      date: "2023-03-01",
+      title: "Event 3",
+      description: "This is the description for Event 3.",
+    },
+    {
+      date: "2023-03-01",
+      title: "Event 3",
+      description: "This is the description for Event 3.",
+    },
+    {
+      date: "2023-03-01",
+      title: "Event 3",
+      description: "This is the description for Event 3.",
+    },
+  ];
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
-      <Carousel>
-        {images.map((image) => (
-          <h1 key={image}>{image}</h1>
-        ))}
-      </Carousel>
+    <div className="flex flex-col items-center justify-center min-h-screen  w-full">
+      <TimelineC events={events} />
     </div>
   );
 };
