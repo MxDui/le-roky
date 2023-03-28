@@ -1,8 +1,69 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import { useCallback } from "react";
+import Particles from "react-particles";
+import { loadFull } from "tsparticles";
+import { Container, Engine } from "tsparticles-engine";
 
 export default function Home() {
+  const particlesInit = useCallback(async (engine: Engine) => {
+    console.log(engine);
+    // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
+    // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
+    // starting from v2 you can add only the features you need reducing the bundle size
+    await loadFull(engine);
+  }, []);
+
+  const particlesLoaded = useCallback(
+    async (container: Container | undefined) => {
+      await console.log(container);
+    },
+    []
+  );
+  const particlesOptions = {
+    particles: {
+      number: {
+        value: 150,
+      },
+      size: {
+        value: 3,
+      },
+
+      line_linked: {
+        enable: true,
+        distance: 150,
+        color: "#ffffff",
+        opacity: 0.4,
+        width: 1,
+      },
+    },
+    move: {
+      decay: 0.05,
+      direction: "top",
+      enable: true,
+      gravity: {
+        enable: true,
+      },
+      outModes: {
+        top: "none",
+        default: "destroy",
+      },
+      speed: {
+        min: 50,
+        max: 100,
+      },
+    },
+    interactivity: {
+      events: {
+        onhover: {
+          enable: true,
+          mode: "repulse",
+        },
+      },
+    },
+  };
+
   return (
     <>
       <Head>
@@ -11,8 +72,15 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="lg:grid  lg:grid-cols-2 gap-4 items-center lg:justify-center justify-end h-screen p-10 bg-[#F1DBBF] flex flex-col-reverse ">
-        <div className="w-full text-justify mt-10 lg:mt-0">
+      <main className="lg:grid  lg:grid-cols-2 gap-4 items-center lg:justify-center z-0 bg-black justify-end h-screen p-10  flex flex-col-reverse ">
+        <Particles
+          init={particlesInit}
+          loaded={particlesLoaded}
+          className="absolute "
+          params={particlesOptions}
+        />
+
+        <div className="w-full text-justify mt-10 lg:mt-0 text-white">
           <h1 className="text-4xl ">Welcome to Rokai</h1>
           <p className="mt-3 text-2xl ">
             The online museum that follows the way to Roko&apos;s Basilisk, a

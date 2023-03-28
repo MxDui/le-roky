@@ -15,8 +15,6 @@ const TimelineItem = ({
   return (
     <motion.div
       className="flex flex-col md:flex-row space-x-4 items-center md:items-center timeline-item p-4 min-h-screen w-full"
-      //   hover only when on mobile
-
       transition={{ duration: 0.2 }}
     >
       <Image
