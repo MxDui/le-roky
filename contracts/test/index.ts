@@ -1,19 +1,20 @@
-import { expect } from "chai";
+// test/MuseumTicket.ts
+
 import { ethers } from "hardhat";
+import chai from "chai";
+import { solidity } from "ethereum-waffle";
+import { MuseumTicket } from "../typechain/MuseumTicket";
 
-describe("Greeter", function () {
-  it("Should return the new greeting once it's changed", async function () {
-    const Greeter = await ethers.getContractFactory("Greeter");
-    const greeter = await Greeter.deploy("Hello, world!");
-    await greeter.deployed();
+chai.use(solidity);
+const { expect } = chai;
 
-    expect(await greeter.greet()).to.equal("Hello, world!");
-
-    const setGreetingTx = await greeter.setGreeting("Hola, mundo!");
-
-    // wait until the transaction is mined
-    await setGreetingTx.wait();
-
-    expect(await greeter.greet()).to.equal("Hola, mundo!");
+describe("MuseumTicket", function () {
+  it("Should mint a new ticket to an address", async function () {
+    const MuseumTicketFactory = await ethers.getContractFactory("MuseumTicket");
+    const museumTicket = (await MuseumTicketFactory.deploy()) as MuseumTicket;
+    await museumTicket.deployed();
+    const owner = await museumTicket.owner();
+    await museumTicket.mintTicket(owner);
+    expect(await museumTicket.ownerOf(0)).to.equal(owner);
   });
 });
